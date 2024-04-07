@@ -16,6 +16,7 @@ class TabBarViewController: UITabBarController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     private func configure() {
         tabBar.backgroundColor = Resources.Colors.BaseView.background
         tabBar.barTintColor = Resources.Colors.BaseView.background
