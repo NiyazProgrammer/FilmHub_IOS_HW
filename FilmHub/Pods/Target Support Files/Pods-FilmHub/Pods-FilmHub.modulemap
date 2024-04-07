@@ -1,6 +1,0 @@
-framework module Pods_FilmHub {
-  umbrella header "Pods-FilmHub-umbrella.h"
-
-  export *
-  module * { export * }
-}
