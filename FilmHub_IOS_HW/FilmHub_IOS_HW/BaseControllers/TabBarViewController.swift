@@ -27,8 +27,7 @@ class TabBarViewController: UITabBarController {
         let profileViewModel = ProfileViewModel(favoriteFilmsId: data.favoriteFilmsId, recentFilmsId: data.RecentFilmsId)
         let profileController = ProfileViewController(viewModel: profileViewModel)
 
-        let mainViewModel = MainViewModel()
-        let mainScreenController = MainViewController(viewModel: mainViewModel)
+        let mainScreenController = MainScreenAssembly.buildMainScreen()
 
         let mainScreenNavigation = NavBarViewController(rootViewController: mainScreenController)
         let profileScreenNavigation = NavBarViewController(rootViewController: profileController)

@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: Create by Azat Ziganshin and Niyaz Rizvanov
 class StarsBuilder {
 
     private var starsStackView: UIStackView = {
@@ -39,4 +40,5 @@ class StarsBuilder {
         }
         return starsStackView
     }
+    
 }

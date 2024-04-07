@@ -67,8 +67,3 @@ class RecentlyFilmsCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension RecentlyFilmsCollectionViewCell {
-    static var reuseIdentifier: String {
-        return String(describing: self)
-    }
-}
