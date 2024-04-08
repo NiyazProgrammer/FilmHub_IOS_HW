@@ -19,3 +19,11 @@
   MainViewController - Kingfisher - метод setupBindings() 
 2. Паттерны часть 1 (MV* семейство)  - использован MVVM
 3. Паттерны часть 2 (Другие) - StartBuilder
+
+
+**Байдамшин Ренат:**
+
+1. SPM: Kingfisher, Alamofire, SwiftyJSON
+2. Generics: -
+3. Паттерны часть 1 (MV* семейство)  - использована архитектура MVVM
+4.  Паттерны часть 2 (Другие) - использовал паттерн Builder
