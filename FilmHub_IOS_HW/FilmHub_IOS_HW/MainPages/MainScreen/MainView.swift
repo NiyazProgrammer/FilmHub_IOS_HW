@@ -260,6 +260,14 @@ extension MainView {
         fifthReviewView.configureView(with: reviews[4])
     }
 
+    func setPopularFilmsImages(with images: [URL?]) {
+        firstFilmImageView.kf.setImage(with: images[0])
+        secondFilmImageView.kf.setImage(with: images[1])
+        thirdFilmImageView.kf.setImage(with: images[2])
+        fourthFilmImageView.kf.setImage(with: images[3])
+        fifthFilmImageView.kf.setImage(with: images[4])
+    }
+
     func setupLayout() {
 
         popularFilmsStackView.addArrangedSubview(firstFilmImageView)

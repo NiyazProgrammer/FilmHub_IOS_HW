@@ -66,7 +66,7 @@ class KinoPoiskAPIManager: FilmsAPIManager {
 
         var result: [Review] = []
 
-        let parameters = ["limit" : "5"]
+        let parameters = ["limit" : "5", "page" : "2"]
 
         let headers: HTTPHeaders = [
             "X-API-KEY": apiKey,

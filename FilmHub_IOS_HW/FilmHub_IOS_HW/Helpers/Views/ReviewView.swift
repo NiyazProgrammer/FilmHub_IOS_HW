@@ -148,13 +148,13 @@ extension ReviewView {
             avatarImageView.widthAnchor.constraint(equalTo: avatarImageView.heightAnchor),
 
             filmTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            filmTitleLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
+            filmTitleLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 5),
 
             filmYearLabel.leadingAnchor.constraint(equalTo: filmTitleLabel.trailingAnchor, constant: 2),
-            filmYearLabel.bottomAnchor.constraint(equalTo: filmTitleLabel.bottomAnchor),
+            filmYearLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
 
             reviewByLabel.leadingAnchor.constraint(equalTo: filmTitleLabel.leadingAnchor),
-            reviewByLabel.topAnchor.constraint(equalTo: filmTitleLabel.bottomAnchor, constant: 5),
+            reviewByLabel.bottomAnchor.constraint(equalTo: topAnchor, constant: 40),
 
             filmImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             filmImageView.topAnchor.constraint(equalTo: topAnchor),

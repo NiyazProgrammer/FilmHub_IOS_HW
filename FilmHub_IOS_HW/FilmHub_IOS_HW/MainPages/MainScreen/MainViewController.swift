@@ -1,10 +1,12 @@
 import UIKit
 import Kingfisher
+import Combine
 
 class MainViewController: UIViewController {
 
     private var mainViewModel: MainViewModel
     private let mainView: MainView = MainView()
+    private var cancellables: Set<AnyCancellable> = []
 
     init(mainViewModel: MainViewModel) {
         self.mainViewModel = mainViewModel
@@ -57,19 +59,19 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     func setupBindings() {
+        mainViewModel.$popularFilmsImages
+            .dropFirst()
+            .sink { [weak self] images in
+                self?.mainView.setPopularFilmsImages(with: images)
+            }
+            .store(in: &cancellables)
 
-        mainViewModel.getPopularFilmsResultBlock = { [weak self] result in
-            self?.mainView.firstFilmImageView.kf.setImage(with: result[0])
-            self?.mainView.secondFilmImageView.kf.setImage(with: result[1])
-            self?.mainView.thirdFilmImageView.kf.setImage(with: result[2])
-            self?.mainView.fourthFilmImageView.kf.setImage(with: result[3])
-            self?.mainView.fifthFilmImageView.kf.setImage(with: result[4])
-        }
-
-        mainViewModel.getReviewsResultBlock = { [weak self] result in
-
-            self?.mainView.setRecentFriendsReview(with: result)
-        }
+        mainViewModel.$recentReviews
+            .dropFirst()
+            .sink { [weak self] reviews in
+                self?.mainView.setRecentFriendsReview(with: reviews)
+            }
+            .store(in: &cancellables)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
