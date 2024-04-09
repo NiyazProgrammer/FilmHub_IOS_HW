@@ -31,6 +31,7 @@
 
 ## Второе домашнее задание:
 
+**Ризванов Нияз:**          
 1. Написал по 3 UNIT, 2 UI, 2 SNAPSHOT теста:   
 3 UNIT и 2 SNAPSHOT написаны [здесь](./FilmHub_IOS_HW/ProfileScreenTests/)    
 2 UI теста написаны [здесь](./FilmHub_IOS_HW/ProfileUITests/)
