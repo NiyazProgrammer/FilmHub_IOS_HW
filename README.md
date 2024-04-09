@@ -40,5 +40,5 @@
 
 **Зиганшин Азат:**
 Пока что смотреть в ветке ZiganshinAzat-MainScreen_Tests, так как при мерже есть конфликты
-1. Написать 3 Unit, 2 UI, 2 Snapshot теста в папках MainScreenTests, MainScreenUITests
+1. Написал 3 Unit, 2 UI, 2 Snapshot теста в папках MainScreenTests, MainScreenUITests
 2. Использовал Combine в архитектуре MVVM (MainViewModel, MainViewController)
