@@ -1,6 +1,9 @@
 import UIKit
 import SnapKit
-
+enum AccessibilityIdentifiers {
+    static let recentlyFilmsColectionView = "Recently_Films_Collection_View"
+    static let FavoriteFilmsCardsStackView = "Favorite_Films_Cards_Stack_View"
+}
 class ProfileView: UIView {
 
     private lazy var scrollView: UIScrollView = {
@@ -19,7 +22,6 @@ class ProfileView: UIView {
 
     private lazy var headerImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "testFilm2"))
-
         image.backgroundColor = .gray
         return image
     }()
@@ -28,11 +30,12 @@ class ProfileView: UIView {
         let image = UIImageView(image: UIImage(named: "testDefaultAvatar"))
         image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = 40
+        image.backgroundColor = .gray
         image.clipsToBounds = true
         return image
     }()
 
-    private lazy var nameLabel: UILabel = {
+    private var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Steve Job"
         label.textColor = .white
@@ -119,11 +122,12 @@ class ProfileView: UIView {
         return stackView
     }()
 
-    lazy var cardsFavoriteFilmsSV: UIStackView = {
+    var cardsFavoriteFilmsSV: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 10
+        stackView.accessibilityIdentifier = AccessibilityIdentifiers.FavoriteFilmsCardsStackView
         return stackView
     }()
 
@@ -187,6 +191,7 @@ class ProfileView: UIView {
         collectionView.register(
             RecentlyFilmsCollectionViewCell.self,
             forCellWithReuseIdentifier: RecentlyFilmsCollectionViewCell.reuseIdentifier)
+        collectionView.accessibilityIdentifier = AccessibilityIdentifiers.recentlyFilmsColectionView
         return collectionView
     }()
 

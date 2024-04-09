@@ -9,6 +9,7 @@ class RecentlyFilmsCollectionViewCell: UICollectionViewCell {
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius =  20
         image.clipsToBounds = true
+        image.backgroundColor = .gray
         return image
     }()
 
@@ -35,7 +36,7 @@ class RecentlyFilmsCollectionViewCell: UICollectionViewCell {
 
     }
 
-    func configure(imageFilm: UIImage, rating: Double) {
+    func configure(imageFilm: UIImage?, rating: Double) {
         filmImage.image = imageFilm
 
         createStarsSV(rating: rating)
