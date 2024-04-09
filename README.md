@@ -1,5 +1,6 @@
+
+## Первое домашнее задание:
 **Ризванов Нияз:**  
-Первое домашнее задание:
 1. Dependency managers: SnapKit, Alamofire,SwiftyJSON, Kingfisher.  
  Смотреть в файлах:     
  [Применение SnapKit](./FilmHub_IOS_HW/FilmHub_IOS_HW/ProfilePage/MainProfileScreen/ProfileView.swift)  
@@ -27,3 +28,10 @@
 2. Generics: -
 3. Паттерны часть 1 (MV* семейство)  - использована архитектура MVVM
 4.  Паттерны часть 2 (Другие) - использовал паттерн Builder
+
+## Второе домашнее задание:
+
+1. Написал по 3 UNIT, 2 UI, 2 SNAPSHOT теста:   
+3 UNIT и 2 SNAPSHOT написаны [здесь](./FilmHub_IOS_HW/ProfileScreenTests/)    
+2 UI теста написаны [здесь](./FilmHub_IOS_HW/ProfileUITests/)
+2. Использовал Combine в [Controller](./FilmHub_IOS_HW/FilmHub_IOS_HW/ProfilePage/MainProfileScreen/ProfileViewController.swift) и [ViewModel](./FilmHub_IOS_HW/FilmHub_IOS_HW/ProfilePage/MainProfileScreen/ProfileViewModel.swift)
