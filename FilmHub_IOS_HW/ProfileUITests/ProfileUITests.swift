@@ -1,17 +1,8 @@
-//
-//  ProfileUITests.swift
-//  ProfileUITests
-//
-//  Created by Нияз Ризванов on 09.04.2024.
-//
-
 import XCTest
 @testable import FilmHub_IOS_HW
 
 final class ProfileUITests: XCTestCase {
-
-    override func setUpWithError() throws {
-    }
+    override func setUpWithError() throws { }
 
     // MARK: Проверка существования карточек любимых фильмов пользователя
     func test_Favorite_Films() throws {

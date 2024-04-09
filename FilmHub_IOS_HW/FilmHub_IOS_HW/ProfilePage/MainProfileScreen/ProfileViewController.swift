@@ -50,7 +50,8 @@ class ProfileViewController: BaseViewController {
             profileView.cardsFavoriteFilmsSV.addArrangedSubview(image)
         }
     }
-
+    
+    // MARK: Использование Combine
     private func setupBindings() {
         viewModel.$movies.sink { [weak self] movies in
             self?.allMovies = movies

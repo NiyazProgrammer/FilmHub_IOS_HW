@@ -3,14 +3,13 @@ import UIKit
 import Combine
 
 class ProfileViewModel {
-    var networkServices: ProfileAPIManagerNetworkServices
     @Published var movies: [Movie] = []
     @Published var favoriteMovies: [Movie] = []
-    private var reviews: [Movie] = []
     let favoriteFilmsId: [Int]
     let recentFilmsId: [Int]
     var getAllMovies: (([Movie]) -> Void)?
     var getFavoriteMovies: (([Movie]) -> Void)?
+    var networkServices: ProfileAPIManagerNetworkServices
 
     init(favoriteFilmsId: [Int], recentFilmsId: [Int], networkServices: ProfileAPIManagerNetworkServices) {
         self.favoriteFilmsId = favoriteFilmsId

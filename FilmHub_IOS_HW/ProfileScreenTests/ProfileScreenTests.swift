@@ -39,9 +39,10 @@ final class ProfileScreenTests: XCTestCase {
     
     // MARK: Проверка загрузки фильмов
     func test_Load_Films() {
+        // GIVEN
         let filmIds = [330, 345, 680, 750, 555, 384, 465, 660, 1000]
         var resultMovies: [Movie]?
-
+        
         let expectation = expectation(description: "Load users films")
         viewModel.networkServices.loadUsersFilms(with: filmIds) { movies in
             resultMovies = movies

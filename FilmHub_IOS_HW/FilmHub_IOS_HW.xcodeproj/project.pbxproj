@@ -32,7 +32,7 @@
 		621251BA2BC2D174002F16E2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621251AE2BC2D174002F16E2 /* MainView.swift */; };
 		621251BB2BC2D174002F16E2 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621251AF2BC2D174002F16E2 /* Review.swift */; };
 		6212521D2BC481C3002F16E2 /* ProfileScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212521C2BC481C3002F16E2 /* ProfileScreenTests.swift */; };
-		621252242BC4913C002F16E2 /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621252232BC4913C002F16E2 /* Exception.swift */; };
+		621252242BC4913C002F16E2 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621252232BC4913C002F16E2 /* Extention.swift */; };
 		621252592BC49E99002F16E2 /* ProfileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621252582BC49E99002F16E2 /* ProfileUITests.swift */; };
 		6212525B2BC49E99002F16E2 /* ProfileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212525A2BC49E99002F16E2 /* ProfileUITestsLaunchTests.swift */; };
 		621252682BC4AE54002F16E2 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 621252672BC4AE54002F16E2 /* SnapshotTesting */; };
@@ -101,7 +101,7 @@
 		621251AF2BC2D174002F16E2 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		6212521A2BC481C3002F16E2 /* ProfileScreenFilmHubIOSHWTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfileScreenFilmHubIOSHWTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6212521C2BC481C3002F16E2 /* ProfileScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenTests.swift; sourceTree = "<group>"; };
-		621252232BC4913C002F16E2 /* Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
+		621252232BC4913C002F16E2 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
 		621252562BC49E99002F16E2 /* ProfileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		621252582BC49E99002F16E2 /* ProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUITests.swift; sourceTree = "<group>"; };
 		6212525A2BC49E99002F16E2 /* ProfileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 			children = (
 				626B8C072BC52FA300ADBC6B /* __Snapshots__ */,
 				6212521C2BC481C3002F16E2 /* ProfileScreenTests.swift */,
-				621252232BC4913C002F16E2 /* Exception.swift */,
+				621252232BC4913C002F16E2 /* Extention.swift */,
 				621252692BC4AE83002F16E2 /* ProfileViewSnapshotTests.swift */,
 			);
 			path = ProfileScreenTests;
@@ -566,7 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6212521D2BC481C3002F16E2 /* ProfileScreenTests.swift in Sources */,
-				621252242BC4913C002F16E2 /* Exception.swift in Sources */,
+				621252242BC4913C002F16E2 /* Extention.swift in Sources */,
 				6212526A2BC4AE83002F16E2 /* ProfileViewSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
