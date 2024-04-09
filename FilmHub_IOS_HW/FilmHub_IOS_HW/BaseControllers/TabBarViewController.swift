@@ -27,16 +27,16 @@ class TabBarViewController: UITabBarController {
         let profileViewModel = ProfileViewModel(favoriteFilmsId: data.favoriteFilmsId, recentFilmsId: data.recentFilmsId, networkServices: ProfileAPIManager())
         let profileController = ProfileViewController(viewModel: profileViewModel)
 
-//        let mainScreenController = MainScreenAssembly.buildMainScreen()
+        let mainScreenController = MainScreenAssembly.buildMainScreen()
 
-//        let mainScreenNavigation = NavBarViewController(rootViewController: mainScreenController)
+        let mainScreenNavigation = NavBarViewController(rootViewController: mainScreenController)
         let profileScreenNavigation = NavBarViewController(rootViewController: profileController)
 
-//        mainScreenNavigation.tabBarItem = UITabBarItem(
-//            title: Resources.Strings.TabBar.mainScreen,
-//            image: Resources.Images.TabBar.homePage,
-//            tag: Tabs.mainScreen.rawValue
-//        )
+        mainScreenNavigation.tabBarItem = UITabBarItem(
+            title: Resources.Strings.TabBar.mainScreen,
+            image: Resources.Images.TabBar.homePage,
+            tag: Tabs.mainScreen.rawValue
+        )
 
         profileScreenNavigation.tabBarItem = UITabBarItem(
             title: Resources.Strings.TabBar.profileScreen,
@@ -45,7 +45,7 @@ class TabBarViewController: UITabBarController {
         )
 
         setViewControllers([
-//            mainScreenNavigation,
+            mainScreenNavigation,
             profileScreenNavigation
         ], animated: false)
     }

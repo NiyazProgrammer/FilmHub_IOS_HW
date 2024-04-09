@@ -1,18 +1,11 @@
 import Foundation
 import UIKit
+import Combine
 
 class ProfileViewModel {
     var networkServices: ProfileAPIManagerNetworkServices
-    private var movies: [Movie] = [] {
-        willSet {
-            (getAllMovies ?? {_ in})(newValue)
-        }
-    }
-    private var favoriteMovies: [Movie] = [] {
-        willSet {
-            (getFavoriteMovies ?? {_ in})(newValue)
-        }
-    }
+    @Published var movies: [Movie] = []
+    @Published var favoriteMovies: [Movie] = []
     private var reviews: [Movie] = []
     let favoriteFilmsId: [Int]
     let recentFilmsId: [Int]
