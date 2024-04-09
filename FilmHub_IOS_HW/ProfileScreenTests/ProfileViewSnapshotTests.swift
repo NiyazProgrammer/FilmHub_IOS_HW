@@ -20,14 +20,14 @@ final class ProfileViewSnapshotTests: XCTestCase {
         let viewModel = ProfileViewModel(favoriteFilmsId: [350,448,565,869], recentFilmsId: [350,448,565,869], networkServices: NetworkServicesMock())
         let profileCV = ProfileViewController(viewModel: viewModel)
 
-        assertSnapshot(of: profileCV, as: .image(on: .iPhoneSe))
+        assertSnapshot(of: profileCV, as: .image(traits: .iPhoneSe(.landscape)))
     }
 
     func test_Profile_Screen_In_Ipad() throws {
         let viewModel = ProfileViewModel(favoriteFilmsId: [350,448,565,869], recentFilmsId: [350,448,565,869], networkServices: NetworkServicesMock())
         let profileCV = ProfileViewController(viewModel: viewModel)
 
-        assertSnapshot(of: profileCV, as: .image(on: .iPadPro11))
+        assertSnapshot(of: profileCV, as: .image(traits: .iPhone13(.landscape)))
     }
 
 }

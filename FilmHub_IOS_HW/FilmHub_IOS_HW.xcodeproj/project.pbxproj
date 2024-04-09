@@ -37,8 +37,6 @@
 		6212525B2BC49E99002F16E2 /* ProfileUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212525A2BC49E99002F16E2 /* ProfileUITestsLaunchTests.swift */; };
 		621252682BC4AE54002F16E2 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 621252672BC4AE54002F16E2 /* SnapshotTesting */; };
 		6212526A2BC4AE83002F16E2 /* ProfileViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621252692BC4AE83002F16E2 /* ProfileViewSnapshotTests.swift */; };
-		6212526F2BC4AFA1002F16E2 /* test_Profile_Screen_In_Iphone_SE.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212526D2BC4AFA1002F16E2 /* test_Profile_Screen_In_Iphone_SE.1.png */; };
-		621252702BC4AFA1002F16E2 /* test_Profile_Screen_In_Ipad.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212526E2BC4AFA1002F16E2 /* test_Profile_Screen_In_Ipad.1.png */; };
 		6215BB172BC2BCE200D12C25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6215BB162BC2BCE200D12C25 /* AppDelegate.swift */; };
 		6215BB192BC2BCE200D12C25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6215BB182BC2BCE200D12C25 /* SceneDelegate.swift */; };
 		6215BB212BC2BCE200D12C25 /* FilmHub_IOS_HW.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6215BB1F2BC2BCE200D12C25 /* FilmHub_IOS_HW.xcdatamodeld */; };
@@ -52,6 +50,8 @@
 		6215BB3D2BC2BFA400D12C25 /* SeeAllButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6215BB3C2BC2BFA400D12C25 /* SeeAllButton.swift */; };
 		6215BB3F2BC2BFAE00D12C25 /* MainUsersInfoSVBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6215BB3E2BC2BFAE00D12C25 /* MainUsersInfoSVBuilder.swift */; };
 		6215BB412BC2BFC600D12C25 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6215BB402BC2BFC600D12C25 /* Resources.swift */; };
+		626B8C0B2BC52FA300ADBC6B /* test_Profile_Screen_In_Iphone_SE.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 626B8C092BC52FA300ADBC6B /* test_Profile_Screen_In_Iphone_SE.1.png */; };
+		626B8C0C2BC52FA300ADBC6B /* test_Profile_Screen_In_Ipad.1.png in Resources */ = {isa = PBXBuildFile; fileRef = 626B8C0A2BC52FA300ADBC6B /* test_Profile_Screen_In_Ipad.1.png */; };
 		62EF9C6A2BC2C30700E983C8 /* MovieScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF9C5F2BC2C30700E983C8 /* MovieScreenViewController.swift */; };
 		62EF9C6B2BC2C30700E983C8 /* RateTheFilmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF9C612BC2C30700E983C8 /* RateTheFilmViewController.swift */; };
 		62EF9C6C2BC2C30700E983C8 /* RateTheFilmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EF9C622BC2C30700E983C8 /* RateTheFilmViewModel.swift */; };
@@ -106,8 +106,6 @@
 		621252582BC49E99002F16E2 /* ProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUITests.swift; sourceTree = "<group>"; };
 		6212525A2BC49E99002F16E2 /* ProfileUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		621252692BC4AE83002F16E2 /* ProfileViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewSnapshotTests.swift; sourceTree = "<group>"; };
-		6212526D2BC4AFA1002F16E2 /* test_Profile_Screen_In_Iphone_SE.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_Profile_Screen_In_Iphone_SE.1.png; sourceTree = "<group>"; };
-		6212526E2BC4AFA1002F16E2 /* test_Profile_Screen_In_Ipad.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_Profile_Screen_In_Ipad.1.png; sourceTree = "<group>"; };
 		6215BB132BC2BCE200D12C25 /* FilmHub_IOS_HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FilmHub_IOS_HW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6215BB162BC2BCE200D12C25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6215BB182BC2BCE200D12C25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +121,8 @@
 		6215BB3C2BC2BFA400D12C25 /* SeeAllButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllButton.swift; sourceTree = "<group>"; };
 		6215BB3E2BC2BFAE00D12C25 /* MainUsersInfoSVBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUsersInfoSVBuilder.swift; sourceTree = "<group>"; };
 		6215BB402BC2BFC600D12C25 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		626B8C092BC52FA300ADBC6B /* test_Profile_Screen_In_Iphone_SE.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_Profile_Screen_In_Iphone_SE.1.png; sourceTree = "<group>"; };
+		626B8C0A2BC52FA300ADBC6B /* test_Profile_Screen_In_Ipad.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_Profile_Screen_In_Ipad.1.png; sourceTree = "<group>"; };
 		62EF9C5F2BC2C30700E983C8 /* MovieScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieScreenViewController.swift; sourceTree = "<group>"; };
 		62EF9C612BC2C30700E983C8 /* RateTheFilmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTheFilmViewController.swift; sourceTree = "<group>"; };
 		62EF9C622BC2C30700E983C8 /* RateTheFilmViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateTheFilmViewModel.swift; sourceTree = "<group>"; };
@@ -224,8 +224,8 @@
 		621251E72BC2D754002F16E2 /* MainProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
-				621251832BC2CFAC002F16E2 /* ProfileView.swift */,
 				621251882BC2CFAC002F16E2 /* ProfileViewController.swift */,
+				621251832BC2CFAC002F16E2 /* ProfileView.swift */,
 				6212518B2BC2CFAC002F16E2 /* ProfileViewModel.swift */,
 			);
 			path = MainProfileScreen;
@@ -262,7 +262,7 @@
 		6212521B2BC481C3002F16E2 /* ProfileScreenTests */ = {
 			isa = PBXGroup;
 			children = (
-				6212526B2BC4AFA1002F16E2 /* __Snapshots__ */,
+				626B8C072BC52FA300ADBC6B /* __Snapshots__ */,
 				6212521C2BC481C3002F16E2 /* ProfileScreenTests.swift */,
 				621252232BC4913C002F16E2 /* Exception.swift */,
 				621252692BC4AE83002F16E2 /* ProfileViewSnapshotTests.swift */,
@@ -284,23 +284,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6212526B2BC4AFA1002F16E2 /* __Snapshots__ */ = {
-			isa = PBXGroup;
-			children = (
-				6212526C2BC4AFA1002F16E2 /* ProfileViewSnapshotTests */,
-			);
-			path = __Snapshots__;
-			sourceTree = "<group>";
-		};
-		6212526C2BC4AFA1002F16E2 /* ProfileViewSnapshotTests */ = {
-			isa = PBXGroup;
-			children = (
-				6212526D2BC4AFA1002F16E2 /* test_Profile_Screen_In_Iphone_SE.1.png */,
-				6212526E2BC4AFA1002F16E2 /* test_Profile_Screen_In_Ipad.1.png */,
-			);
-			path = ProfileViewSnapshotTests;
 			sourceTree = "<group>";
 		};
 		6215BB0A2BC2BCE200D12C25 = {
@@ -381,6 +364,23 @@
 				6215BB3E2BC2BFAE00D12C25 /* MainUsersInfoSVBuilder.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		626B8C072BC52FA300ADBC6B /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				626B8C082BC52FA300ADBC6B /* ProfileViewSnapshotTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		626B8C082BC52FA300ADBC6B /* ProfileViewSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				626B8C092BC52FA300ADBC6B /* test_Profile_Screen_In_Iphone_SE.1.png */,
+				626B8C0A2BC52FA300ADBC6B /* test_Profile_Screen_In_Ipad.1.png */,
+			);
+			path = ProfileViewSnapshotTests;
 			sourceTree = "<group>";
 		};
 		62EF9C5E2BC2C30700E983C8 /* MovieScreen */ = {
@@ -537,8 +537,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6212526F2BC4AFA1002F16E2 /* test_Profile_Screen_In_Iphone_SE.1.png in Resources */,
-				621252702BC4AFA1002F16E2 /* test_Profile_Screen_In_Ipad.1.png in Resources */,
+				626B8C0B2BC52FA300ADBC6B /* test_Profile_Screen_In_Iphone_SE.1.png in Resources */,
+				626B8C0C2BC52FA300ADBC6B /* test_Profile_Screen_In_Ipad.1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

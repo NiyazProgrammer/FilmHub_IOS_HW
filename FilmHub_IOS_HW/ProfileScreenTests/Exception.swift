@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 @testable import FilmHub_IOS_HW
 
 class NetworkServicesMock: ProfileAPIManagerNetworkServices {
