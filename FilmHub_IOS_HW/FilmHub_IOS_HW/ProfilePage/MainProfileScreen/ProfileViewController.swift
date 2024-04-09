@@ -1,10 +1,12 @@
 import UIKit
+import Combine
 
 class ProfileViewController: BaseViewController {
     private var allMovies: [Movie] = []
     private var  favoriteMovies: [Movie] = []
     private let profileView: ProfileView = .init(frame: .zero)
     private let viewModel: ProfileViewModel
+    private var subscriptions = Set<AnyCancellable>()
 
     init(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
@@ -49,16 +51,16 @@ class ProfileViewController: BaseViewController {
         }
     }
 
-    func setupBindings() {
-        viewModel.getAllMovies = { [weak self] films in
-            self?.allMovies = films
+    private func setupBindings() {
+        viewModel.$movies.sink { [weak self] movies in
+            self?.allMovies = movies
             self?.profileView.recentlyFilmsColectionView.reloadData()
-        }
+        }.store(in: &subscriptions)
 
-        viewModel.getFavoriteMovies = { [weak self] films in
-            self?.favoriteMovies = films
+        viewModel.$favoriteMovies.sink { [weak self] movies in
+            self?.favoriteMovies = movies
             self?.addFavoriteMovies()
-        }
+        }.store(in: &subscriptions)
     }
 }
 

@@ -22,9 +22,9 @@ class TabBarViewController: UITabBarController {
         tabBar.barTintColor = Resources.Colors.BaseView.background
         tabBar.tintColor = Resources.Colors.TabBar.active
 
-        let data = ProfilesMoviewsDataManager()
+        let data = ProfilesMoviewsDataManager.shared
 
-        let profileViewModel = ProfileViewModel(favoriteFilmsId: data.favoriteFilmsId, recentFilmsId: data.RecentFilmsId)
+        let profileViewModel = ProfileViewModel(favoriteFilmsId: data.favoriteFilmsId, recentFilmsId: data.recentFilmsId, networkServices: ProfileAPIManager())
         let profileController = ProfileViewController(viewModel: profileViewModel)
 
         let mainScreenController = MainScreenAssembly.buildMainScreen()

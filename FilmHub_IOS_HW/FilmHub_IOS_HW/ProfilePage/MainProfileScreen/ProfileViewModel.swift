@@ -1,30 +1,24 @@
 import Foundation
 import UIKit
+import Combine
 
 class ProfileViewModel {
-    private var movies: [Movie] = [] {
-        willSet {
-            (getAllMovies ?? {_ in})(newValue)
-        }
-    }
-    private var favoriteMovies: [Movie] = [] {
-        willSet {
-            (getFavoriteMovies ?? {_ in})(newValue)
-        }
-    }
+    var networkServices: ProfileAPIManagerNetworkServices
+    @Published var movies: [Movie] = []
+    @Published var favoriteMovies: [Movie] = []
     private var reviews: [Movie] = []
-    private let services = ProfileAPIManager()
     let favoriteFilmsId: [Int]
     let recentFilmsId: [Int]
     var getAllMovies: (([Movie]) -> Void)?
     var getFavoriteMovies: (([Movie]) -> Void)?
 
-    init(favoriteFilmsId: [Int], recentFilmsId: [Int]) {
+    init(favoriteFilmsId: [Int], recentFilmsId: [Int], networkServices: ProfileAPIManagerNetworkServices) {
         self.favoriteFilmsId = favoriteFilmsId
         self.recentFilmsId = recentFilmsId
+        self.networkServices = networkServices
     }
 
-    private func ratingConversation(with modifiedFilms: [Movie]) -> [Movie]  {
+    func ratingConversation(with modifiedFilms: [Movie]) -> [Movie]  {
         var movies = modifiedFilms
         for index in 0..<movies.count {
             movies[index].rayting = roundRatingDown((movies[index].rayting) / 2)
@@ -33,20 +27,20 @@ class ProfileViewModel {
     }
 
     // MARK: Округляем значение рейтинга вниз до ближайшего целого числа
-    private func roundRatingDown(_ rating: Double) -> Double {
+    func roundRatingDown(_ rating: Double) -> Double {
         let roundedRating = floor(rating * 2) / 2
         return roundedRating
     }
 
     func loadUsersFilms(with favoriteFilmsId: [Int], with recentFilmsId: [Int]) {
-        services.loadUsersFilms(with: recentFilmsId, completion: { movies in
+        networkServices.loadUsersFilms(with: recentFilmsId, completion: { movies in
             if var newMovies = movies {
                 newMovies = self.ratingConversation(with: newMovies)
                 self.movies = newMovies
             }
 
         })
-        services.loadUsersFilms(with: favoriteFilmsId, completion: { movies in
+        networkServices.loadUsersFilms(with: favoriteFilmsId, completion: { movies in
             if var newMovies = movies {
                 newMovies = self.ratingConversation(with: newMovies)
                 self.favoriteMovies = newMovies
