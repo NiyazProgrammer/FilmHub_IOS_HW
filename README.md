@@ -13,13 +13,13 @@
 
 
 
-Зиганшин Азат:
+**Зиганшин Азат:**
 1. SPM: Kingfisher, Alamofire, SwiftyJSON
   Смотреть в файлах:
   KinoPoiskAPIManager - SwiftyJSON, Alamofire,
   MainViewController - Kingfisher - метод setupBindings() 
 2. Паттерны часть 1 (MV* семейство)  - использован MVVM
-3. Паттерны часть 2 (Другие) - StartBuilder
+3. Паттерны часть 2 (Другие) - StarsBuilder
 
 
 **Байдамшин Ренат:**
@@ -36,3 +36,9 @@
 3 UNIT и 2 SNAPSHOT написаны [здесь](./FilmHub_IOS_HW/ProfileScreenTests/)    
 2 UI теста написаны [здесь](./FilmHub_IOS_HW/ProfileUITests/)
 2. Использовал Combine в [Controller](./FilmHub_IOS_HW/FilmHub_IOS_HW/ProfilePage/MainProfileScreen/ProfileViewController.swift) и [ViewModel](./FilmHub_IOS_HW/FilmHub_IOS_HW/ProfilePage/MainProfileScreen/ProfileViewModel.swift)
+
+
+**Зиганшин Азат:**
+Пока что смотреть в ветке ZiganshinAzat-MainScreen_Tests, так как при мерже есть конфликты
+1. Написать 3 Unit, 2 UI, 2 Snapshot теста в папках MainScreenTests, MainScreenUITests
+2. Использовал Combine в архитектуре MVVM (MainViewModel, MainViewController)
