@@ -131,6 +131,7 @@ class MainView: UIView {
         stackView.axis = .horizontal
         stackView.spacing = 5
         stackView.distribution = .fillEqually
+        stackView.accessibilityIdentifier = "popular_Films_Stack_View"
 
         return stackView
     }()
@@ -156,6 +157,7 @@ class MainView: UIView {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.register(CategoriesCollectionViewCell.self, forCellWithReuseIdentifier: CategoriesCollectionViewCell.reuseIdentifier)
         table.backgroundColor = UIColor(red: 31/255, green: 29/255, blue: 55/255, alpha: 1.0)
+        table.accessibilityIdentifier = "categories_Collection_View"
         return table
     }()
 
@@ -313,7 +315,7 @@ extension MainView {
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
 
-            avatarImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 0),
+            avatarImageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor, constant: 5),
             avatarImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             avatarImageView.heightAnchor.constraint(equalToConstant: 50),
             avatarImageView.widthAnchor.constraint(equalTo: avatarImageView.heightAnchor),

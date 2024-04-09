@@ -42,7 +42,7 @@ class KinoPoiskAPIManager: FilmsAPIManager {
         }
     }
 
-    private func yearRangeString() -> String {
+    func yearRangeString() -> String {
         let currentDate = Date()
         let calendar = Calendar.current
 

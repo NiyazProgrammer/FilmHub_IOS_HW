@@ -23,13 +23,13 @@ class MainViewModel {
         self.filmsAPIManager = filmsAPIManager
     }
 
-    func getPopularFilmsImages() {
+    func getPopularFilmsImages() async {
         filmsAPIManager.getFivePopularFilmsImages { [weak self] images in
             self?.popularFilmsImages = images
         }
     }
 
-    func getReviews() {
+    func getReviews() async {
         filmsAPIManager.getReviews { [weak self] reviews in
             self?.recentReviews = reviews
         }

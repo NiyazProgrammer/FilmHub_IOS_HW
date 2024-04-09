@@ -41,22 +41,14 @@ class MainViewController: UIViewController {
 
         navigationController?.setNavigationBarHidden(true, animated: false)
         setupBindings()
-        getPopularFilmsImages()
-        getReviews()
-
+        Task {
+            await mainViewModel.getReviews()
+            await mainViewModel.getPopularFilmsImages()
+        }
     }
-
 }
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
-    func getPopularFilmsImages() {
-        mainViewModel.getPopularFilmsImages()
-    }
-
-    func getReviews() {
-        mainViewModel.getReviews()
-    }
 
     func setupBindings() {
         mainViewModel.$popularFilmsImages
