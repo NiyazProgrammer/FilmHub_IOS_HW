@@ -1,12 +1,12 @@
+import Foundation
 import UIKit
-
+import SwiftyJSON
+import Kingfisher
 
 class MovieScreenView: UIView {
-    
-    var movieScreenViewController: MovieScreenViewController?
+
     var rateButtonAction: (() -> Void)?
     var movieAboutButtonAction: (() -> Void)?
-
 
     lazy var moviePhotoBackground: UIImageView = UIImageView()
     lazy var movieMainPhoto: UIImageView = UIImageView()
@@ -29,7 +29,6 @@ class MovieScreenView: UIView {
     lazy var scoreRatingLabel: UILabel = UILabel()
     lazy var scoreRatingButton: UIButton = UIButton()
 
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor(hexString: "#1F1D36")
@@ -46,7 +45,7 @@ class MovieScreenView: UIView {
         setUpInfoHorizontalStackView()
         setUpMovieDirectorTitle()
         setUpRateTheFilmButton()
-        setUpmovieAboutButton()
+        setUpMovieAboutButton()
         setUpWillWatchButton()
         setUpRatingLabel()
         setUpScoreRatingLabel()
@@ -56,13 +55,11 @@ class MovieScreenView: UIView {
         setUpMovieAboutButtonLabel()
         setUpMovieDescriptionLabel()
         setUpMovieDetailsButton()
-
     }
 
     private func setUpMoviePhotoBackground() {
         addSubview(moviePhotoBackground)
         moviePhotoBackground.translatesAutoresizingMaskIntoConstraints = false
-        moviePhotoBackground.image = UIImage(named: "daniel-olah-wfQaZHGAVHo")
 
         NSLayoutConstraint.activate([
             moviePhotoBackground.topAnchor.constraint(equalTo: topAnchor),
@@ -80,25 +77,20 @@ class MovieScreenView: UIView {
     private func setupGradient(in view: UIView) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
-
         let gradientHeight = view.bounds.height
         gradientLayer.frame.size.height = gradientHeight
-
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor(hexString: "#1F1D36").withAlphaComponent(3).cgColor]
         gradientLayer.locations = [0.0001, 1]
         gradientLayer.zPosition = 100
-
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     private func setUpMovieMainPhoto() {
         addSubview(movieMainPhoto)
         movieMainPhoto.translatesAutoresizingMaskIntoConstraints = false
-        movieMainPhoto.image = UIImage(named: "batmanPoster.jpeg")
         movieMainPhoto.layer.cornerRadius = 10
         movieMainPhoto.clipsToBounds = true
 
-        // Установка constraints
         NSLayoutConstraint.activate([
             movieMainPhoto.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             movieMainPhoto.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -170),
@@ -107,9 +99,6 @@ class MovieScreenView: UIView {
         ])
     }
 
-
-
-    //
     private func setUpInfoHorizontalStackView() {
         infoHorizontalStackView.translatesAutoresizingMaskIntoConstraints = false
         infoHorizontalStackView.axis = .horizontal
@@ -122,7 +111,6 @@ class MovieScreenView: UIView {
         infoHorizontalStackView.addArrangedSubview(movieTitle)
         infoHorizontalStackView.addArrangedSubview(movieYearTitle)
 
-
         addSubview(infoHorizontalStackView)
 
         NSLayoutConstraint.activate([
@@ -130,19 +118,16 @@ class MovieScreenView: UIView {
             infoHorizontalStackView.leadingAnchor.constraint(equalTo: movieMainPhoto.trailingAnchor, constant: 15),
             infoHorizontalStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
         ])
-
     }
 
     private func setUpMovieTitle() {
         movieTitle.translatesAutoresizingMaskIntoConstraints = false
-        movieTitle.text = "Batman"
         movieTitle.font = UIFont(name: "HelveticaNeue-Bold", size: 30)
         movieTitle.textColor = .white
     }
 
     private func setUpMovieYearTitle() {
         movieYearTitle.translatesAutoresizingMaskIntoConstraints = false
-        movieYearTitle.text = "2022"
         movieYearTitle.textColor = .white
         movieYearTitle.font = UIFont.systemFont(ofSize: 14)
     }
@@ -153,12 +138,10 @@ class MovieScreenView: UIView {
         movieDirectorTitle.numberOfLines = 0
         movieDirectorTitle.textColor = .white
         movieDirectorTitle.font = UIFont.systemFont(ofSize: 12)
-        movieDirectorTitle.text = "Directed by Matt Reeves"
 
         NSLayoutConstraint.activate([
             movieDirectorTitle.topAnchor.constraint(equalTo: infoHorizontalStackView.bottomAnchor, constant: 8),
             movieDirectorTitle.leadingAnchor.constraint(equalTo: movieMainPhoto.trailingAnchor, constant: 15)
-
         ])
     }
 
@@ -178,15 +161,12 @@ class MovieScreenView: UIView {
         ])
 
         rateTheFilmButton.addTarget(self, action: #selector(rateButtonTapped), for: .touchUpInside)
-
     }
 
     @objc private func rateButtonTapped() {
+        rateButtonAction?()
+    }
 
-            rateButtonAction?()
-        }
-
-    
     private func setUpWillWatchButton() {
         addSubview(willWatchButton)
         let buttonImage = UIImage(systemName: "list.star")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 30, weight: .regular))
@@ -203,7 +183,7 @@ class MovieScreenView: UIView {
         ])
     }
 
-    private func setUpmovieAboutButton() {
+    private func setUpMovieAboutButton() {
         addSubview(movieAboutButton)
         let buttonImage = UIImage(systemName: "info.square.fill")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 30, weight: .regular))
         let tintedImage = buttonImage?.withTintColor(UIColor(hexString: "#EA9696"), renderingMode: .alwaysOriginal)
@@ -219,13 +199,11 @@ class MovieScreenView: UIView {
         ])
 
         movieAboutButton.addTarget(self, action: #selector(movieAboutButtonTapped), for: .touchUpInside)
-
     }
 
     @objc private func movieAboutButtonTapped() {
-
-            movieAboutButtonAction?()
-        }
+        movieAboutButtonAction?()
+    }
 
     private func setUprateTheFilmButtonLabel() {
         addSubview(rateTheFilmButtonLabel)
@@ -237,7 +215,6 @@ class MovieScreenView: UIView {
         NSLayoutConstraint.activate([
             rateTheFilmButtonLabel.centerXAnchor.constraint(equalTo: rateTheFilmButton.centerXAnchor),
             rateTheFilmButtonLabel.topAnchor.constraint(equalTo: rateTheFilmButton.bottomAnchor, constant: 1)
-
         ])
     }
 
@@ -251,7 +228,6 @@ class MovieScreenView: UIView {
         NSLayoutConstraint.activate([
             willWatchButtonLabel.centerXAnchor.constraint(equalTo: willWatchButton.centerXAnchor),
             willWatchButtonLabel.topAnchor.constraint(equalTo: willWatchButton.bottomAnchor, constant: 1)
-
         ])
     }
 
@@ -265,7 +241,6 @@ class MovieScreenView: UIView {
         NSLayoutConstraint.activate([
             movieAboutButtonLabel.centerXAnchor.constraint(equalTo: movieAboutButton.centerXAnchor),
             movieAboutButtonLabel.topAnchor.constraint(equalTo: movieAboutButton.bottomAnchor, constant: 1)
-
         ])
     }
 
@@ -274,23 +249,19 @@ class MovieScreenView: UIView {
         movieDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         movieDescriptionLabel.textColor = .white
         movieDescriptionLabel.font = UIFont(name: "HelveticaNeue", size: 10)
-        movieDescriptionLabel.text = "UNMASK THE TRUTH.\n \nIn his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.\nUNMASK THE TRUTH.\nIn his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler."
         movieDescriptionLabel.numberOfLines = 0
-        movieDescriptionLabel.textAlignment = .justified // Выравнивание текста по левому краю
+        movieDescriptionLabel.textAlignment = .justified
 
         NSLayoutConstraint.activate([
             movieDescriptionLabel.topAnchor.constraint(equalTo: willWatchButtonLabel.bottomAnchor, constant: 20),
             movieDescriptionLabel.leadingAnchor.constraint(equalTo: ratingLabel.trailingAnchor, constant: 45),
             movieDescriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             movieDescriptionLabel.heightAnchor.constraint(equalToConstant: 90)
-
-
         ])
     }
 
     private func setUpMovieDetailsButton() {
         addSubview(movieDetailsButton)
-
         movieDetailsButton.setTitle("Все детали о фильме", for: .normal)
         movieDetailsButton.setTitleColor(UIColor(hexString: "#EA9696"), for: .normal)
         movieDetailsButton.backgroundColor = .clear
@@ -305,9 +276,6 @@ class MovieScreenView: UIView {
         ])
     }
 
-
-
-    //
     private func setUpRatingStackView() {
         ratingStackView.addArrangedSubview(ratingLabel)
     }
@@ -315,31 +283,25 @@ class MovieScreenView: UIView {
     private func setUpRatingLabel() {
         addSubview(ratingLabel)
         ratingLabel.translatesAutoresizingMaskIntoConstraints = false
-        ratingLabel.text = "Rating"
         ratingLabel.font = UIFont(name: "HelveticaNeue", size: 22)
         ratingLabel.textColor = .darkGray
 
         NSLayoutConstraint.activate([
             ratingLabel.topAnchor.constraint(equalTo: movieMainPhoto.bottomAnchor, constant: 15),
-
             ratingLabel.centerXAnchor.constraint(equalTo: movieMainPhoto.centerXAnchor)
-
         ])
-
     }
 
     private func setUpScoreRatingLabel() {
         addSubview(scoreRatingLabel)
         scoreRatingLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreRatingLabel.font = UIFont(name: "HelveticaNeue-bold", size: 42)
-        scoreRatingLabel.text = "4.3"
         scoreRatingLabel.textColor = UIColor(hexString: "#EA9696")
 
         NSLayoutConstraint.activate([
             scoreRatingLabel.topAnchor.constraint(equalTo: ratingLabel.bottomAnchor, constant: 15),
             scoreRatingLabel.centerXAnchor.constraint(equalTo: ratingLabel.centerXAnchor)
         ])
-
     }
 
     private func setUpScoreRatingButton() {
@@ -370,6 +332,19 @@ class MovieScreenView: UIView {
         ])
     }
 
-    
-}
+    func configure(with movie: Movie) {
+        movieTitle.text = movie.title
+        movieYearTitle.text = "\(movie.year)"
+        movieDirectorTitle.text = "Directed by \(movie.director)"
+        movieDescriptionLabel.text = movie.description
+        scoreRatingLabel.text = "\(movie.rating)"
 
+        if let posterURL = URL(string: movie.mainPhotoURL) {
+            movieMainPhoto.kf.setImage(with: posterURL)
+        }
+
+        if let backgroundURL = URL(string: movie.backgroundPhotoURL) {
+            moviePhotoBackground.kf.setImage(with: backgroundURL)
+        }
+    }
+}

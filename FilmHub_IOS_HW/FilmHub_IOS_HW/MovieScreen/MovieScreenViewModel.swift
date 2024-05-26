@@ -1,12 +1,3 @@
-//
-//  MovieScreenViewModel.swift
-//  FilmHub
-//
-//  Created by err on 24.03.2024.
-//
-
-import Foundation
-
 class MovieScreenViewModel {
 
     weak var viewController: MovieScreenViewController?
@@ -16,6 +7,14 @@ class MovieScreenViewModel {
     }
 
     func fetchMovieDetails() {
-
+        let movieID = 12345
+        MovieAPIManager().fetchMovieDetails(movieID: movieID) { [weak self] result in
+            switch result {
+            case .success(let movie):
+                self?.viewController?.updateView(with: movie)
+            case .failure(let error):
+                print("Error fetching movie details: \(error)")
+            }
+        }
     }
 }

@@ -1,9 +1,4 @@
-//
-//  MovieScreenViewController.swift
-//  FilmHub
-//
-//  Created by err on 24.03.2024.
-//
+
 
 import UIKit
 
@@ -15,11 +10,12 @@ class MovieScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
+        viewModel = MovieScreenViewModel(viewController: self)
         setupUI()
         viewModel?.fetchMovieDetails()
     }
+
 
     func setupUI() {
         movieScreenView = MovieScreenView()
@@ -43,18 +39,25 @@ class MovieScreenViewController: UIViewController {
 
     }
 
-
+    func updateView(with movie: Movie) {
+        DispatchQueue.main.async {
+            self.movieScreenView?.movieTitle.text = movie.title
+            self.movieScreenView?.movieYearTitle.text = "\(movie.year)"
+            self.movieScreenView?.movieDirectorTitle.text = "Directed by \(movie.director)"
+            self.movieScreenView?.movieDescriptionLabel.text = movie.description
+            self.movieScreenView?.scoreRatingLabel.text = "\(movie.rating)"
+            self.movieScreenView?.movieMainPhoto.kf.setImage(with: URL(string: movie.mainPhotoURL))
+            self.movieScreenView?.moviePhotoBackground.kf.setImage(with: URL(string: movie.backgroundPhotoURL))
+        }
+    }
 
     @objc internal func rateTheFilmButtonTapped() {
         let rateTheFilmViewController = RateTheFilmViewController()
         navigationController?.pushViewController(rateTheFilmViewController, animated: true)
     }
 
-
     @objc internal func movieAboutButtonTapped() {
         let movieDetailsViewController = MovieDetailsViewController()
         navigationController?.pushViewController(movieDetailsViewController, animated: true)
     }
-
-    
 }
